@@ -1,0 +1,77 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<!DOCTYPE BookStore SYSTEM "19031758_Manzil_Katwal.dtd">
+<BookStore Branch="Itahari"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="19031758_venetianblind.xsd" >
+    <storeName>ItahariBookStor</storeName>
+    <Address streetName="SainikMarga">Itahari</Address>
+    <website>www.ItahariStore.com.np</website>
+    <contact>
+        <email>www.itaharistore@gmail.com</email>
+        <contactNo.>9815645239</contactNo.>
+    </contact>
+    <Books>
+        <Book Category="Fantasy">
+            <Title Language="English">Harry Potter and the Philosopher's Stone</Title>
+            <CoverArtist></CoverArtist>
+            <price Currency="USD">160USD</price>
+            <Publisher Country="UK">Bloomsbury</Publisher>
+            <Publisher Country="US">Scholastic</Publisher>
+            <PublishYear>1997</PublishYear>
+            <Pages>223</Pages>
+            <ISBN>0-7475-3269-9</ISBN>
+            <Size>5 x 0.75 x 8 inches</Size>
+            <MediaType>audioBook</MediaType>
+            <MediaType>e-Book</MediaType>
+            <Authors>
+                <Author Title="Mrs">
+                    <Name>J.K. Rowling</Name>
+                    <Born Age="55">1965-07-31</Born>
+                    <BirthPlace>England</BirthPlace>
+                    <AlmaMater>University of Exeter</AlmaMater>
+                    <Period>1997 to present</Period>
+                    <Spouse>Neil Murray</Spouse>
+                    <Genre Favourite="Fantasy">Drama</Genre>
+                    <NotableWorks>HarryPotter Series</NotableWorks>
+                    <socialMedia>
+                        <Facebook Status="Active">
+                            <FacebookID>J.K. Rowling</FacebookID>
+                            <FacebookFollowers>6.6M</FacebookFollowers>
+                            <FacebookFollowing>200</FacebookFollowing>
+                            <FacebookJoined>2012</FacebookJoined>
+                        </Facebook>
+                    </socialMedia>
+                </Author>
+            </Authors>
+         </Book>
+         <Book Category="Quest">
+            <Title Language="Portuguese">O Alquimista</Title>
+            <CoverArtist>Caravaggio</CoverArtist>
+            <price Currency="USD">160</price>
+            <Publisher Country="Portugal">HarperTorch </Publisher>
+            <PublishYear>1988</PublishYear>
+            <Pages>163</Pages>
+            <ISBN>0-06-250217-4</ISBN>
+            <Size>5.10(w) x 7.90(h) x 1.10(d)</Size>
+            <MediaType>Print HardBack</MediaType>
+            <Authors>
+                <Author Title="Mr">
+                    <Name>Paulo Coelho de Souza</Name>
+                    <Born Age="73">1947-08-24</Born>
+                    <BirthPlace>Brazil</BirthPlace>
+                    <Period>1974 to present</Period>
+                    <Spouse>Christina Oiticica</Spouse>
+                    <Genre Favourite="Romance">Drama</Genre>
+                    <NotableWorks>O Alquimista</NotableWorks>
+                    <socialMedia>
+                        <Facebook Status="InActive">
+                            <FacebookID>Paulo Coelho</FacebookID>
+                            <FacebookFollowers>41,320</FacebookFollowers>
+                            <FacebookFollowing>260</FacebookFollowing>
+                            <FacebookJoined>2012</FacebookJoined>
+                        </Facebook>
+                    </socialMedia>
+                </Author>
+            </Authors>
+         </Book>
+    </Books>
+ </BookStore>

@@ -1,0 +1,50 @@
+<!ELEMENT BookStore (storeName,Address,website,contact,Books)>
+<!ATTLIST BookStore
+ Branch NMTOKEN #REQUIRED
+ xmlns:xsi CDATA #REQUIRED
+xsi:noNamespaceSchemaLocation CDATA #REQUIRED
+>
+<!ELEMENT storeName (#PCDATA)>
+<!ELEMENT Address (#PCDATA)>
+<!ATTLIST Address streetName NMTOKEN #REQUIRED>
+<!ELEMENT website (#PCDATA)>
+<!ELEMENT contact (email,contactNo.)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT contactNo. (#PCDATA)>
+<!ELEMENT Books (Book+)>
+<!ELEMENT Book (Title,CoverArtist,price,Publisher+,PublishYear,Pages,ISBN,Size,MediaType+,Authors)>
+<!ATTLIST Book Category CDATA #REQUIRED>
+<!ELEMENT Title (#PCDATA)>
+<!ATTLIST Title Language CDATA #REQUIRED>
+<!ELEMENT CoverArtist (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ATTLIST price Currency NMTOKEN #IMPLIED>
+<!ATTLIST price currency CDATA #IMPLIED>
+<!ELEMENT Publisher (#PCDATA)>
+<!ATTLIST Publisher Country NMTOKEN #REQUIRED>
+<!ELEMENT PublishYear (#PCDATA)>
+<!ELEMENT Pages (#PCDATA)>
+<!ELEMENT ISBN (#PCDATA)>
+<!ELEMENT Size (#PCDATA)>
+<!ELEMENT MediaType (#PCDATA)>
+<!ELEMENT Authors (Author)>
+<!ELEMENT Author (Name,Born,BirthPlace,AlmaMater?,Period,Spouse,Genre,NotableWorks,socialMedia)>
+<!ATTLIST Author Title (Mr|Mrs) #REQUIRED>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT Born (#PCDATA)>
+<!ATTLIST Born Age NMTOKEN #IMPLIED>
+<!ATTLIST Born age NMTOKEN #IMPLIED>
+<!ELEMENT BirthPlace (#PCDATA)>
+<!ELEMENT AlmaMater (#PCDATA)>
+<!ELEMENT Period (#PCDATA)>
+<!ELEMENT Spouse (#PCDATA)>
+<!ELEMENT Genre (#PCDATA)>
+<!ATTLIST Genre Favourite NMTOKEN #REQUIRED>
+<!ELEMENT NotableWorks (#PCDATA)>
+<!ELEMENT socialMedia (Facebook)>
+<!ELEMENT Facebook (FacebookID,FacebookFollowers,FacebookFollowing,FacebookJoined)>
+<!ATTLIST Facebook Status (Active|InActive) #REQUIRED>
+<!ELEMENT FacebookID (#PCDATA)>
+<!ELEMENT FacebookFollowers (#PCDATA)>
+<!ELEMENT FacebookFollowing (#PCDATA)>
+<!ELEMENT FacebookJoined (#PCDATA)>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="BookStore">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="storeName" type="xs:string" />
+        <xs:element name="Address">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute name="streetName" use="required" />
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="website" type="xs:string" />
+        <xs:element name="contact">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="email">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:pattern value="[^@]+@[^\.]+\..+|"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="contactNo.">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:pattern value="[98]{2}[0-9]{8}"/>
+                </xs:restriction>
+              </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Books">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Book" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Title">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="Language" use="required">
+                              <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                  <xs:enumeration value="Portuguese"/>
+                                  <xs:enumeration value="English"/>
+                                </xs:restriction>
+                              </xs:simpleType>
+                            </xs:attribute>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="CoverArtist" type="xs:string" />
+                    <xs:element name="price">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="Currency">
+                              <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                  <xs:enumeration value="USD"/>
+                                </xs:restriction>
+                              </xs:simpleType>
+                            </xs:attribute>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Publisher" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="Country" use="required" >
+                              <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                  <xs:enumeration value="UK"/>
+                                  <xs:enumeration value="US"/>
+                                  <xs:enumeration value="Portugal"/>
+                                </xs:restriction>
+                              </xs:simpleType>
+                          </xs:attribute>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="PublishYear" type="xs:string" />
+                    <xs:element name="Pages" type="xs:string" />
+                    <xs:element name="ISBN" type="xs:string" />
+                    <xs:element name="Size" type="xs:string" />
+                    <xs:element name="MediaType" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="Authors">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Author">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Name" type="xs:string" />
+                                <xs:element name="Born">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:date">
+                                        <xs:attribute name="Age">
+                                          <xs:simpleType>
+                                            <xs:restriction base="xs:integer">
+                                              <xs:minInclusive value="0"/>
+                                              <xs:maxInclusive value="100"/>
+                                            </xs:restriction>
+                                          </xs:simpleType>
+                                        </xs:attribute>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="BirthPlace" type="xs:string" />
+                                <xs:element name="AlmaMater" minOccurs="0" type="xs:string"/>
+                                <xs:element name="Period" type="xs:string" />
+                                <xs:element name="Spouse" >
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="Neil Murray"/>
+                                      <xs:enumeration value="Christina Oiticica"/>
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="Genre">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute name="Favourite" use="required" />
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="NotableWorks" type="xs:string" />
+                                <xs:element name="socialMedia">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Facebook">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="FacebookID" type="xs:string" />
+                                            <xs:element name="FacebookFollowers" type="xs:string" />
+                                            <xs:element name="FacebookFollowing" type="xs:string" />
+                                            <xs:element name="FacebookJoined" type="xs:string" />
+                                          </xs:sequence>
+                                          <xs:attribute name="Status" use="required">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                  <xs:enumeration value="Active"/>
+                                                  <xs:enumeration value="InActive"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                          </xs:attribute>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="Title" use="required">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="Mr"/>
+                                      <xs:enumeration value="Mrs"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Category" use="required">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:enumeration value="Fantasy"/>
+                        <xs:enumeration value="Quest"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="Branch">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Itahari"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
